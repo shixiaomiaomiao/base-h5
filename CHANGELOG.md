@@ -10,6 +10,7 @@
   - 位运算符
   - `rgba`的换算， 24, 16, 8 
   - `rem`的换算
+  - createTintColorSVG
 
 # 2019.2.9
 - Image 
