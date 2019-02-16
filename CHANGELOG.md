@@ -1,3 +1,20 @@
+# 2019.2.16
+- ScrollView
+  - ScrollResponder
+    - scrollResponderMixinGetInitialState
+    - scrollResponderHandleScrollShouldSetResponder
+    - scrollResponderHandleStartShouldSetResponder
+    - scrollResponderHandleStartShouldSetResponderCapture
+    - scrollResponderHandleResponderReject
+    - scrollResponderHandleTerminationRequest 
+    - scrollResponderHandleResponderRelease
+    - scrollResponderHandleResponderGrant
+    - scrollResponderHandleTouchEnd
+    - scrollResponderHandleTouchStart 
+    - scrollResponderHandleScroll
+    - scrollResponderHandleMomentumScrollBegin
+    - scrollResponderHandleMomentumScrollEnd
+
 # 2019.2.10
 - Image
   - constructor
