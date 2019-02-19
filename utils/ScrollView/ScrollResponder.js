@@ -111,7 +111,7 @@ const ScrollResponderMixin = {
         // findNodeHandle: 处理找寻node节点的方法
         return this.getScrollableNode ? this.getScrollableNode : findNodeHandle(this);
     },
-    /
+    
 
 
 };

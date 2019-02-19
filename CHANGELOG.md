@@ -6,6 +6,7 @@
 				- scrollResponderHandleScrollBeginGrag
 				- scrollResponderHandleScrollEndGrag
 				- scrollResponderIsAnimating
+				- scrollResponderGetScrollableNode
 
 # 2019.2.16
 - ScrollView
