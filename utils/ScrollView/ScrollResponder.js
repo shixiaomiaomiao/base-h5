@@ -1,3 +1,5 @@
+
+const IS_ANIMATING_TOUCH_START_THRESHOLD_MS = 16;
 const ScrollResponderMixin = {
     // 设置初始的一些标志信息
     scrollResponderMixinGetInitialState() {
@@ -84,6 +86,32 @@ const ScrollResponderMixin = {
         this.state.lastMomentumEndTime = Date.now();
         this.props.onMomentumScrollEnd && this.props.onMomentumScrollEnd(e);
     },
+    // touch事件
+    scrollResponderHandleTouchStart(e) {
+        this.state.isTouching = true;
+        this.props.onTouchStart && this.props.onTouchStart(e);
+    },
+    // touch移动
+    scrollResponderHandleTouchMove(e) {
+        this.props.onTouchMove && this.props.onTouchMove(e);
+    },
+    scrollResponderIsAnimating() {
+        const now = Date.now();
+        // 现在与上次滚动结束的间隔时间
+        const timeSinceLastMomentumScrollEnd = now - this.state.lastMomentumScrollEndTime;
+        // 正在滚动的依据满足两者之一：
+        // 1）时间间隔小于 16（为了防抖），
+        // 2）最近的结束时间小于最近的开始时间
+        const isAnimating = timeSinceLastMomentumScrollEnd > IS_ANIMATING_TOUCH_START_THRESHOLD_MS || 
+        this.state.lastMomentumScrollEndTime < this.state.lastMomentumBeginTime;
+        return isAnimating
+    },
+    scrollResponderGetScrollableNode() {
+        // getScrollableNode 是给外部重写获取node节点的方法
+        // findNodeHandle: 处理找寻node节点的方法
+        return this.getScrollableNode ? this.getScrollableNode : findNodeHandle(this);
+    },
+    /
 
 
 };

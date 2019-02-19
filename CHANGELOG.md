@@ -1,3 +1,12 @@
+# 2019.2.19
+- ScrollView
+  - ScrollResponder
+				- scrollResponderHandleTouchStart
+				- scrollResponderHandleTouchMove
+				- scrollResponderHandleScrollBeginGrag
+				- scrollResponderHandleScrollEndGrag
+				- scrollResponderIsAnimating
+
 # 2019.2.16
 - ScrollView
   - ScrollResponder
